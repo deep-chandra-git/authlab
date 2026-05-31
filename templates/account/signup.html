@@ -1,0 +1,68 @@
+{% extends "account/base.html" %}
+{% load socialaccount %}
+
+{% block account_content %}
+
+
+
+<h3 class="text-center mb-4">
+    Create Account
+</h3>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label>Email</label>
+        {{ form.email }}
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        {{ form.password1 }}
+    </div>
+
+    <div class="mb-3">
+        <label>Confirm Password</label>
+        {{ form.password2 }}
+    </div>
+
+    <button
+        type="submit"
+        class="btn btn-warning w-100">
+
+        Create Account
+
+    </button>
+
+</form>
+
+
+
+<a href="{% provider_login_url 'google' %}"
+   class="btn btn-outline-dark w-100 mt-3">
+
+    Continue with Google
+
+</a>
+<hr>
+<div class="d-flex mb-4 ">
+
+    <a href="{% url 'account_login' %}"
+       class="btn btn-warning flex-fill me-2">
+
+        Login
+
+    </a>
+
+    <a href="{% url 'account_signup' %}"
+       class="btn btn-outline-warning flex-fill">
+
+        Signup
+
+    </a>
+
+</div>
+
+{% endblock %}

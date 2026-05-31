@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="card shadow auth-card">
+
+        <div class="card-body p-4">
+
+            <h2 class="text-center brand mb-4">
+                AuthLab
+            </h2>
+
+            {% block account_content %}
+            {% endblock %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

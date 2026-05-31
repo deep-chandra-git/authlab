@@ -1,0 +1,25 @@
+{% extends "account/base.html" %}
+
+{% block account_content %}
+
+<h3>Confirm Email</h3>
+
+<p>
+Click below to verify your email.
+</p>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <button
+        type="submit"
+        class="btn btn-warning w-100">
+
+        Verify Email
+
+    </button>
+
+</form>
+
+{% endblock %}
