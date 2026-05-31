@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-12 col-md-10 col-lg-8">
+        <div class="card shadow-lg border-0">
+
+            <div class="card-body p-5">
+
+                <h1 class="mb-4">
+                    Welcome 
+                </h1>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <p>
+                            <strong>Email:</strong><br>
+                            {{ user.email }}
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <p>
+                            <strong>Username:</strong><br>
+                            {{ user.username }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="d-flex flex-column flex-sm-row gap-2">
+                    <a href="{% url 'profile' %}"
+                       class="btn btn-primary">
+
+                        My Profile
+
+                    </a>
+
+                    <form method="post"
+                          action="{% url 'account_logout' %}">
+
+                        {% csrf_token %}
+
+                        <button type="submit"
+                                class="btn btn-danger">
+
+                            Logout
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
