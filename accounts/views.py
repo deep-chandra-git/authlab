@@ -3,6 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import ProfileForm
 
+def home(request):
+
+    if request.user.is_authenticated:
+        return redirect("dashboard")
+
+    return redirect("account_login")
 
 @login_required
 def dashboard(request):
