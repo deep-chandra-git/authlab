@@ -1,0 +1,46 @@
+{% extends "account/base.html" %}
+
+{% block account_content %}
+
+<div class="text-center">
+
+    <div class="mb-4">
+        <h3 class="fw-bold">
+            Verify Your Email
+        </h3>
+
+        <p class="text-muted mt-3">
+            We've sent a verification email to your inbox.
+        </p>
+    </div>
+
+    <div class="alert alert-warning">
+
+        <strong>Important:</strong>
+
+        Check your inbox and spam folder.
+        Click the verification link to activate your account.
+
+    </div>
+
+    <div class="d-grid gap-2 mt-4">
+
+        <a href="{% url 'account_login' %}"
+           class="btn btn-warning">
+
+            Back to Login
+
+        </a>
+
+        <a href="{% url 'account_signup' %}"
+           class="btn btn-outline-secondary">
+
+            Create Another Account
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
